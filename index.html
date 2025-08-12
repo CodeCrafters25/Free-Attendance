@@ -193,7 +193,7 @@ h1{font-size:34px;margin:0 0 6px 0;line-height:1;}
       <div class="logo"><img src="img/cclog.jpg" alt=""></div>
       <div>
         <h1><span class="sike">Sike! 😈</span> — You got PRANKED!</h1>
-        <div class="subtitle">This QR gives free mini-heart-attack, not attendance.</div>
+        <div class="subtitle">Dont worry we've got you covered!</div>
         <div class="dates">
             <div style="font-size:13px;color:rgba(255, 255, 255, 0.767)"><h1>Code Crafters Fest</h1></div>
             <div class="big"><h2>19 • 20 • 21 Aug</h2></div>
@@ -273,15 +273,16 @@ setTimeout(() => {
 document.getElementById('getAttnBtn').onclick=()=>{
   document.getElementById('prank-bubble').innerHTML=`<div class="emoji">🎉</div>
     <div><div style="font-weight:800">SIKE! 😜</div>
-    <div style="font-size:13px;color:rgba(255,255,255,0.55)">Register for Code Crafters for real attendance.</div></div>`;
+    <div style="font-size:13px;color:rgba(255,255,255,0.55)">Follow On Instagram For More Hints About Code Crafters Fest.</div></div>`;
   setTimeout(()=>window.location.href=INSTAGRAM_ID,900);
 };
 
 // ===== Typewriter Text =====
 const hints=[
   "This QR was made by: A very mischievous dev.",
-  "Dates: 19, 20 & 21 August — win prizes & attend workshops.",
-  "Scan another QR — maybe pizza? Or not."
+  "Dates: 19, 20 & 21 August — win prizes.",
+  "Scan another QR — maybe pizza?",
+  "Scan another QR — maybe Bhavan's WiFi Password?"
 ];
 let hintIndex=0,charIndex=0;
 function typeHint(){
@@ -296,7 +297,7 @@ function typeHint(){
 typeHint();
 
 // ===== Floating Emojis =====
-const emojis = ['🎉', '✨', '🎈', '💣' ,'🤣', '😜', '🥳', '💀', '📚'];
+const emojis = ['🎉', '✨', '🎈', '💣' ,'🤣', '😜', '🥳', '💀', '📚','🐗','🧛','🍕'];
 // Reduce from 60 to maybe 25 for a lighter effect
 for (let i = 0; i < 25; i++) {
   const span = document.createElement('span');
@@ -313,6 +314,7 @@ for (let i = 0; i < 25; i++) {
 </script>
 </body>
 </html>
+
 
 
 
