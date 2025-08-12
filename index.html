@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>PRANKKKED UUU! 🎉</title>
+<title>Code Crafters 🎉</title>
+<link rel="icon" href="img/CodeCrafters Icon.png" type="image/png">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -22,7 +24,7 @@ html,body{
 /* Confetti Canvas */
 #confettiCanvas {
   position:fixed;top:0;left:0;width:100%;height:100%;
-  pointer-events:none;z-index:9998;
+  pointer-events:none;z-index:0;
 }
 
 /* SIKE! Animated Entry Overlay */
@@ -53,7 +55,7 @@ html,body{
 }
 @keyframes bounce {
   0%   { opacity: 0; transform: scale(0.6) rotate(-20deg); }
-  50%  { opacity: 1; transform: scale(1.2) rotate(10deg); color: rgb(255, 255, 255); }
+  50%  { opacity: 1; transform: scale(1.2) rotate(10deg); }
   60%  { transform: scale(0.9) rotate(-10deg);}
   80%  { transform: scale(1.05) rotate(7deg);}
   100% { opacity: 1; transform: scale(1) rotate(0deg); color: rgb(236, 10, 10);}
@@ -66,10 +68,15 @@ html,body{
 }
 
 /* Main Content Card */
-.main-content {opacity:0;transition:opacity 0.8s ease;}
+.main-content {
+    opacity:0;
+    transition:opacity 0.8s ease; 
+    z-index:100; 
+    position:relative;
+}
 .main-content.show {opacity:1;}
 .card{
-  width:min(920px,94vw);
+  width:min(720px,90vw);
   background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
   border-radius:18px;
   padding:34px;
@@ -79,14 +86,13 @@ html,body{
   margin:50px auto;
 }
 
-/* ✅ FIXED PRANK CONTENT GRID */
 .top-row {
   display: grid;
-  grid-template-columns: auto 1fr; /* logo on left, text on right */
+  grid-template-columns: auto 1fr;
   gap: 18px;
   align-items: start;
 }
-@media(max-width:600px){
+@media(max-width:500px){
   .top-row { grid-template-columns: 1fr; text-align: center; }
   .dates { text-align: center !important; margin: 10px auto 0; }
 }
@@ -115,7 +121,7 @@ h1{font-size:34px;margin:0 0 6px 0;line-height:1;}
 .subtitle{color:var(--muted);margin:6px 0 18px 0;}
 .prank-line{
   display:grid;
-  grid-template-columns: 1fr auto; /* prank bubble takes left, dates on right */
+  grid-template-columns: 1fr auto;
   gap:14px;
   margin:16px 0;
 }
@@ -133,7 +139,6 @@ h1{font-size:34px;margin:0 0 6px 0;line-height:1;}
 .btn{
   padding:12px 18px;border-radius:10px;border:0;cursor:pointer;font-weight:700;
 }
-.btn.register{background:linear-gradient(90deg,#7bd389,#41b883);color:#052017}
 .btn.attn{background:transparent;color:var(--muted);border:1px dashed rgba(255,255,255,0.3)}
 .footer{margin-top:20px;color:rgba(255,255,255,0.35);font-size:13px}
 
@@ -155,107 +160,33 @@ h1{font-size:34px;margin:0 0 6px 0;line-height:1;}
 
 /* ===== Mobile Responsive Tweaks ===== */
 @media (max-width: 768px) {
-  .card {
-    padding: 22px;
-    margin: 30px auto;
-  }
-
-  .top-row {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .logo {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 12px;
-  }
-
-  h1 {
-    font-size: 26px;
-    line-height: 1.2;
-  }
-
-  .subtitle {
-    font-size: 14px;
-    margin-bottom: 14px;
-  }
-
-  .dates {
-    text-align: center !important;
-    margin: 8px auto 0;
-  }
-
-  .prank-line {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .prank-bubble {
-    flex-direction: column;
-    text-align: center;
-    gap: 8px;
-    padding: 12px;
-  }
-
-  .emoji {
-    font-size: 28px;
-  }
-
-  .small-type {
-    font-size: 12px;
-    margin-top: 10px;
-  }
-
-  .cta-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-  }
-
-  .btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-  }
+  .card { padding: 22px; margin: 30px auto; }
+  .top-row { grid-template-columns: 1fr; text-align: center; }
+  .logo { width: 64px; height: 64px; margin: 0 auto 12px; }
+  h1 { font-size: 26px; line-height: 1.2; }
+  .subtitle { font-size: 14px; margin-bottom: 14px; }
+  .dates { text-align: center !important; margin: 8px auto 0; }
+  .prank-line { grid-template-columns: 1fr; gap: 10px; }
+  .prank-bubble { flex-direction: column; text-align: center; gap: 8px; padding: 12px; }
+  .emoji { font-size: 28px; }
+  .small-type { font-size: 12px; margin-top: 10px; }
+  .cta-row { flex-direction: column; align-items: stretch; gap: 10px; }
+  .btn { width: 100%; padding: 10px; font-size: 14px; }
 }
 
 @media (max-width: 480px) {
-  .letter {
-    font-size: 4.5rem;
-  }
-
-  h1 {
-    font-size: 22px;
-  }
-
-  .dates .big {
-    font-size: 14px;
-  }
+  .letter { font-size: 4.5rem; }
+  h1 { font-size: 22px; }
+  .dates .big { font-size: 14px; }
 }
-
-
 </style>
 </head>
 <body>
 
-<!-- Confetti -->
-<canvas id="confettiCanvas"></canvas>
-
-<!-- SIKE! entry overlay -->
-<div class="sike-container" id="sike-container">
-  <span class="letter">S</span>
-  <span class="letter">I</span>
-  <span class="letter">K</span>
-  <span class="letter">E</span>
-  <span class="letter">!</span>   
-</div>
-
-<!-- Main prank content -->
 <div class="main-content" id="mainContent">
   <div class="card">
     <div class="top-row">
-      <div class="logo"><img src="CC 25 LOGO.jpg" alt=""></div>
+      <div class="logo"><img src="img/cclog.jpg" alt=""></div>
       <div>
         <h1><span class="sike">Sike! 😈</span> — You got PRANKED!</h1>
         <div class="subtitle">This QR gives free mini-heart-attack, not attendance.</div>
@@ -271,11 +202,9 @@ h1{font-size:34px;margin:0 0 6px 0;line-height:1;}
               <div style="font-size:13px;color:rgba(255,255,255,0.55)">Nope. But here’s something better 👇</div>
             </div>
           </div>
-          
         </div>
         <div class="small-type" id="smallType"></div>
         <div class="cta-row">
-          <button class="btn register" id="registerBtn">Register</button>
           <button class="btn attn" id="getAttnBtn">Contact Us</button>
         </div>
         <div class="footer">
@@ -286,9 +215,17 @@ h1{font-size:34px;margin:0 0 6px 0;line-height:1;}
   </div>
 </div>
 
+<canvas id="confettiCanvas"></canvas>
+
+<div class="sike-container" id="sike-container">
+  <span class="letter">S</span>
+  <span class="letter">I</span>
+  <span class="letter">K</span>
+  <span class="letter">E</span>
+  <span class="letter">!</span>   
+</div>
+
 <script>
-// ===== CONFIG =====
-const REGISTER_URL = "https://example.com/register";
 const INSTAGRAM_ID = "https://www.instagram.com/code._crafters._?igsh=ejhtZjlwZGhyeTFs";
 
 // ===== Confetti =====
@@ -300,13 +237,15 @@ window.addEventListener('resize', () => {W=canvas.width=innerWidth;H=canvas.heig
 class Confetti {
   constructor(){
     this.x=Math.random()*W;this.y=Math.random()*H-H;
-    this.size=Math.random()*8+5;this.speed=Math.random()*3+2;
+    this.size=Math.random()*5+3; // smaller size
+    this.speed=Math.random()*1.5+0.8; // slower
     this.color=`hsl(${Math.random()*360},100%,50%)`;
   }
   update(){this.y+=this.speed;if(this.y>H)this.y=-10;}
   draw(){ctx.fillStyle=this.color;ctx.fillRect(this.x,this.y,this.size,this.size);}
 }
-const confs=Array.from({length:150},()=>new Confetti());
+// Reduced number of confetti
+const confs=Array.from({length:50},()=>new Confetti());
 (function loop(){
   ctx.clearRect(0,0,W,H);
   confs.forEach(c=>{c.update();c.draw();});
@@ -316,9 +255,7 @@ const confs=Array.from({length:150},()=>new Confetti());
 // ===== SIKE Animation =====
 const letters = document.querySelectorAll('.letter');
 letters.forEach((letter, i) => {
-  setTimeout(() => {
-    letter.classList.add('animated');
-  }, i * 250);
+  setTimeout(() => { letter.classList.add('animated'); }, i * 250);
 });
 setTimeout(() => {
   document.getElementById('sike-container').classList.add('fade-out');
@@ -328,8 +265,7 @@ setTimeout(() => {
   }, 800);
 }, letters.length * 300 + 600);
 
-// ===== Buttons =====
-document.getElementById('registerBtn').onclick=()=>window.open(REGISTER_URL,'_blank');
+// ===== Contact Button =====
 document.getElementById('getAttnBtn').onclick=()=>{
   document.getElementById('prank-bubble').innerHTML=`<div class="emoji">🎉</div>
     <div><div style="font-weight:800">SIKE! 😜</div>
