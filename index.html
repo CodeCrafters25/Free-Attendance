@@ -157,16 +157,12 @@ h1{font-size:34px;margin:0 0 6px 0;line-height:1;}
   pointer-events: none;
   z-index: 1;
 }
-
 /* ===== Mobile Responsive Tweaks ===== */
 @media (max-width: 768px) {
-    .letter {
-  font-family: Impact, Arial Black, sans-serif;
-  font-size: 8rem;}
   .card { padding: 22px; margin: 30px auto; }
-  .top-row { grid-template-columns: 1fr; text-align: center; }
+  .top-row { grid-template-columns: 1fr; text-align: center; gap: 10px; }
   .logo { width: 64px; height: 64px; margin: 0 auto 12px; }
-  h1 { font-size: 26px; line-height: 1.2; }
+  h1 { font-size: 26px; line-height: 1.2; word-break: break-word; }
   .subtitle { font-size: 14px; margin-bottom: 14px; }
   .dates { text-align: center !important; margin: 8px auto 0; }
   .prank-line { grid-template-columns: 1fr; gap: 10px; }
@@ -175,12 +171,13 @@ h1{font-size:34px;margin:0 0 6px 0;line-height:1;}
   .small-type { font-size: 12px; margin-top: 10px; }
   .cta-row { flex-direction: column; align-items: stretch; gap: 10px; }
   .btn { width: 100%; padding: 10px; font-size: 14px; }
+  .letter { font-size: 5rem; }
 }
 
 @media (max-width: 480px) {
-  .letter { font-size: 4.5rem; }
-  h1 { font-size: 36px; }
-  .dates .big { font-size: 24px; }
+  .letter { font-size: 4rem; }
+  h1 { font-size: 22px; }
+  .dates .big { font-size: 18px; }
 }
 </style>
 </head>
@@ -312,3 +309,4 @@ for (let i = 0; i < 25; i++) {
 </script>
 </body>
 </html>
+
